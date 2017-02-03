@@ -24,14 +24,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func buttonPress(sender: AnyObject) {
+    @IBAction func buttonPress(_ sender: AnyObject) {
         
     
         let product = Product(name: "Mac Book Pro 2015", price: 13000.0)
         self.textLabel.text = product.description
         
         let newImage = UIImage.imageWithColor(UIColor.randomColor)
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.async { () -> Void in
             self.imageView.image = newImage
         }
         
